@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".BMIActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_BMI"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/teal_700"
+        app:titleTextColor="@color/white"/>
+    
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rgSatuan"
+        android:layout_below="@id/tb_BMI"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/radio_group_tab"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbSatuanMetric"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:background="@drawable/tab_selector"
+            android:layout_weight="0.5"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center"
+            android:text="METRICS UNIT"
+            android:textColor="@drawable/tab_selector_color"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <RadioButton
+            android:id="@+id/rbSatuanUS"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:background="@drawable/tab_selector"
+            android:layout_weight="0.5"
+            android:button="@null"
+            android:checked="false"
+            android:gravity="center"
+            android:text="US UNIT"
+            android:textColor="@drawable/tab_selector_color"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+    </RadioGroup>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_below="@id/rgSatuan"
+        android:id="@+id/tilInputBerat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:boxStrokeColor="@color/teal_700"
+        app:hintTextColor="@color/black"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etBeratBadan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Berat (kg)"
+            android:inputType="numberDecimal"
+            android:textSize="16sp"/>
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:id="@+id/view"
+        android:layout_below="@id/rgSatuan"
+        android:layout_centerHorizontal="true"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_below="@id/rgSatuan"
+        android:id="@+id/tilInputUSBerat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:boxStrokeColor="@color/teal_700"
+        app:hintTextColor="@color/black"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etUSBeratBadan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Berat (pounds)"
+            android:inputType="numberDecimal"
+            android:textSize="16sp"/>
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_below="@id/tilInputBerat"
+        android:id="@+id/tilInputTinggi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:boxStrokeColor="@color/teal_700"
+        app:hintTextColor="@color/black"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etTinggiBadan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tinggi (cm)"
+            android:inputType="numberDecimal"
+            android:textSize="16sp"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_below="@id/tilInputBerat"
+        android:id="@+id/tilSatuanUSFeet"
+        android:layout_toStartOf="@id/view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:layout_margin="10dp"
+        android:layout_alignParentStart="true"
+        app:boxStrokeColor="@color/teal_700"
+        app:hintTextColor="@color/black"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etSatuanUSPanjangFeet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Feet"
+            android:inputType="numberDecimal"
+            android:textSize="16sp"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_below="@id/tilInputBerat"
+        android:id="@+id/tilSatuanUSInch"
+        android:layout_toEndOf="@id/view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:layout_margin="10dp"
+        android:layout_alignParentEnd="true"
+        app:boxStrokeColor="@color/teal_700"
+        app:hintTextColor="@color/black"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etSatuanUSPanjangInch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Inch"
+            android:inputType="numberDecimal"
+            android:textSize="16sp"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <LinearLayout
+        android:padding="10dp"
+        android:id="@+id/llHasilBMI"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tilInputTinggi"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        tools:visibility="visible">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvHasilBMI"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvNilaiBMI"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:text="15.00"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvTipeBMI"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:textSize="18sp"
+            tools:text="Normal"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvDeskripsiBMI"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:textSize="18sp"
+            tools:text="Normal"/>
+
+    </LinearLayout>
+    
+    <Button
+        android:id="@+id/btHasilBMI"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/llHasilBMI"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:layout_marginTop="35dp"
+        android:backgroundTint="@color/teal_700"
+        android:text="CALCULATE"
+        android:layout_margin="10dp"
+        android:textSize="18dp"/>
+
+
+</RelativeLayout>
